@@ -10,6 +10,33 @@ services:
       - "7002:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    networks:
+      - elt_network
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "admin", "-d", "medallion"]
+      interval: 5s
+      retries: 5
+  
+  dbt:
+    image: ghcr.io/dbt-labs/dbt-postgres:1.7.4
+    container_name: dbt
+    volumes:
+      - ./dbt_project:/usr/app/dbt
+    working_dir: /usr/app/dbt
+    environment:
+      DBT_PROFILES_DIR: /usr/app/dbt
+    networks:
+      - elt_network
+    depends_on:
+      postgres:
+          condition: service_healthy
+    entrypoint: ["tail", "-f", "/dev/null"]
 
 volumes:
   postgres_data:
+
+networks:
+  elt_network:
+    driver: bridge
+
+

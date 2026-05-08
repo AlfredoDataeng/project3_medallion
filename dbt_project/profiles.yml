@@ -1,0 +1,12 @@
+medallion:
+  target: dev
+  outputs:
+    dev:
+      type: postgres
+      host: medallion_db
+      port: 5432
+      user: admin
+      password: admin123
+      dbname: medallion
+      schema: public
+      threads: 1
