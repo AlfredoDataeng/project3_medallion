@@ -2,27 +2,35 @@ version: 2
 
 models:
   - name: stg_clientes
+    description: "Informações dos clientes limpas e padronizadas da camada bronze"
     columns:
       - name: cliente_id
+        description: "Identificador único do cliente"
         tests:
           - unique
           - not_null
   
   - name: stg_transacoes
+    description: "Transações limpas e padronizadas da camada bronze"
     columns:
       - name: transacao_id
+        description: "Identificador único da transação"
         tests:
           - unique
           - not_null
       - name: valor_kz
+        description: "Valor da transação em Kwanzas - sempre positivo"
         tests:
           - not_null
   
   - name: stg_taxa_cambio
+    description: "Taxas de cambio filtradas e organizadas da camada bronze"
     columns:
       - name: moeda_destino
+        description: "Moedas resultantes do filtro determinado"
         tests:
           - not_null
       - name: taxa
+        description: "Valor que corresponde a taxa requisitada"
         tests:
           - not_null
