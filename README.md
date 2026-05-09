@@ -16,7 +16,7 @@ O objectivo é demonstrar como organizar dados em camadas progressivas de qualid
 ---
 
 ## 🏗️ Arquitectura
-[arquitetura](assets/arquitetura_da_solucao.png)
+![arquitetura](assets/arquitetura_da_solucao.png)
 
 
 ```
