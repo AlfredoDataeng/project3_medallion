@@ -1,6 +1,5 @@
 __pycache__/
 *.pyc
-.env
 venv/
 .venv/
 .DS_Store
@@ -8,3 +7,4 @@ logs/
 dbt_project/target/
 dbt_project/dbt_packages/
 .klaus_models
+.env
