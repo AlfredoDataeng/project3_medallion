@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: bronze
+    schema: bronze
+    tables:
+      - name: transacoes_raw
+      - name: clientes_raw
+      - name: taxas_cambio_raw
