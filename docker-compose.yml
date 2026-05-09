@@ -27,6 +27,8 @@ services:
       DBT_PROFILES_DIR: /usr/app/dbt
     networks:
       - elt_network
+    ports:
+      - "8081:8081"
     depends_on:
       postgres:
           condition: service_healthy
