@@ -1,0 +1,22 @@
+version: 2
+
+models:
+  - name: mart_churn_clientes
+    columns:
+      - name: cliente_id
+        tests:
+          - not_null
+          - unique
+  
+  - name: mart_transacoes_por_provincia
+    columns:
+      - name: provincia
+        tests:
+          - not_null
+          - unique
+  
+  - name: mart_resumo_cambio
+    columns:
+      - name: moeda
+        tests:
+          - not_null

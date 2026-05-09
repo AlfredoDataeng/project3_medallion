@@ -1,0 +1,28 @@
+version: 2
+
+models:
+  - name: stg_clientes
+    columns:
+      - name: cliente_id
+        tests:
+          - unique
+          - not_null
+  
+  - name: stg_transacoes
+    columns:
+      - name: transacao_id
+        tests:
+          - unique
+          - not_null
+      - name: valor_kz
+        tests:
+          - not_null
+  
+  - name: stg_taxa_cambio
+    columns:
+      - name: moeda_destino
+        tests:
+          - not_null
+      - name: taxa
+        tests:
+          - not_null
