@@ -19,17 +19,6 @@ O objectivo é demonstrar como organizar dados em camadas progressivas de qualid
 ![arquitetura](assets/arquitetura_da_solucao.png)
 
 
-```
-┌─────────────────┐     ┌──────────────┐     ┌─────────────────────────────────────────┐
-│   FONTES        │     │  INGESTÃO    │     │          WAREHOUSE (PostgreSQL)          │
-│                 │     │              │     │                                          │
-│  CSV locais     │────►│   Python     │────►│  BRONZE  →  SILVER  →  GOLD             │
-│  Exchange API   │     │  (ELT)       │     │  (raw)      (clean)    (metrics)        │
-└─────────────────┘     └──────────────┘     └─────────────────────────────────────────┘
-                                                              ▲
-                                                             dbt
-```
-
 ### Camadas
 
 |Camada|Tipo|Descrição|
